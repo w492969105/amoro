@@ -30,6 +30,9 @@ FROM eclipse-temurin:8-jdk-jammy as builder
 
 ADD . /workspace/amoro
 WORKDIR /workspace/amoro
+
+RUN apt-get update && apt-get install -y gnupg
+
 #RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 871920D1991BC93C
 # 将 GPG 密钥的公钥内容复制到容器中
 COPY ./gpgkey.asc /tmp/gpgkey.asc
