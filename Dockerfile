@@ -30,6 +30,7 @@ FROM eclipse-temurin:8-jdk-jammy as builder
 
 ADD . /workspace/amoro
 WORKDIR /workspace/amoro
+RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 871920D1991BC93C
 RUN sed -i 's/http:\/\/archive.ubuntu.com\/ubuntu\//http:\/\/mirrors.tuna.tsinghua.edu.cn\/ubuntu\//g' /etc/apt/sources.list
 RUN sed -i 's/http:\/\/security.ubuntu.com\/ubuntu\//http:\/\/mirrors.tuna.tsinghua.edu.cn\/ubuntu\//g' /etc/apt/sources.list
 RUN apt-get update
