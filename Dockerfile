@@ -49,7 +49,7 @@ ENV AMORO_CONF_DIR ${AMORO_HOME}/conf
 ENV LOG_LEVEL info
 EXPOSE 1630 1260 1261
 
-COPY ./docker/amoro/entrypoint.sh /
+COPY ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 COPY --from=builder "/usr/local/amoro" "/usr/local/amoro"
 
