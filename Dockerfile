@@ -32,11 +32,7 @@ ADD . /workspace/amoro
 WORKDIR /workspace/amoro
 RUN sed -i 's/http:\/\/archive.ubuntu.com\/ubuntu\//http:\/\/mirrors.tuna.tsinghua.edu.cn\/ubuntu\//g' /etc/apt/sources.list
 RUN sed -i 's/http:\/\/security.ubuntu.com\/ubuntu\//http:\/\/mirrors.tuna.tsinghua.edu.cn\/ubuntu\//g' /etc/apt/sources.list
-RUN apt-get update && \
-    apt-get install -y gnupg
-
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C    
-
+RUN apt-get update
 RUN apt-get install -y unzip
 
 
